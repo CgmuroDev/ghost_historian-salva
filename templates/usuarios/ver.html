@@ -1,0 +1,43 @@
+{% extends "layout/base.html" %}
+{% load static %}
+
+{% block title %}
+  Detalles del Usuario
+{% endblock title %}
+
+{% block style %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/usuario.css' %}">
+{% endblock style %}
+
+{% block cuerpo %}
+  <body class="container">
+    {% include "layout/partials/menu.html" %}
+
+    <div id="ash-container"></div>
+
+    <main class="row">
+      <div class="usuario-detalles">
+        <h1>Detalles del Usuario</h1>
+        <ul>
+          <div class="usuario-campo">
+            <li><p>Username: {{ user.username }}</p></li>
+          </div>
+          <div class="usuario-campo">
+            <li><p>Nombre: {{ user.nombre }}</p></li>
+          </div>
+          <div class="usuario-campo">
+            <li><p>Apellidos: {{ user.apellidos }}</p></li>
+          </div>
+          <div class="usuario-campo">
+            <li><p>Email: {{ user.email }}</p></li>
+          </div>
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      <p>Todos los derechos reservados</p>
+    </footer>
+  </body>
+{% endblock cuerpo %}

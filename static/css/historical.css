@@ -1,0 +1,206 @@
+:root {
+    --verde: #0aa06e;
+    --amarillo: #dfeb3f;
+    --azul: #3498db;
+}
+  
+.hechos {
+      width: 60%;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+      margin: 20px auto;
+      background-size: cover;
+      background-image: url('https://th.bing.com/th/id/OIP.Is6ko4EvYib-R12qg0LyfwHaEK?w=258&h=180&c=7&r=0&o=5&pid=1.7');
+}
+    
+.hechos li {
+      display: flex;
+      padding: 10px;
+      border-bottom: 3px solid white;
+      justify-content: space-between;
+  }
+    
+  .hecho-nombre {
+      color: #ececec;
+  }
+    
+  .acciones {
+      display: flex;
+      justify-content: space-between;
+      width: 20%; 
+      padding: 0%;
+}
+    
+  .acciones a {
+      color: var(--verde);
+      text-decoration: none;
+      transition: 0.3s ease;
+}
+    
+  .acciones .senalar a {
+      color: var(--amarillo);
+      transition: 0.3s ease;
+}
+  
+  /* Agrega estas reglas a tu archivo CSS */
+.detalles a:hover {
+      background-color: var(--azul);
+      color: #fff;
+}
+  
+.senalar a:hover {
+      background-color: var(--f39c12);
+      color: #fff;
+}
+  
+    
+  
+  /* Resetear estilos predeterminados del cuerpo y la lista */
+body, ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+}
+  
+body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #2d2e30; /* Fondo claro y ligeramente grisáceo */
+      background-image: url('https://th.bing.com/th/id/R.be1f87e61e7a3d30ed4c315bf90b3970?rik=EFyB4UBYqFOfKw&riu=http%3a%2f%2fimages2.wikia.nocookie.net%2f__cb20120829052706%2fsimcountry%2fimages%2fd%2fdc%2fThe-battle-of-stalingrad-generals-at-war.jpg&ehk=r7yh8M7q%2b2l4EEA5VoNZa3SXglswlSs3byMAIWWBApM%3d&risl=&pid=ImgRaw&r=0'); /* Reemplaza 'ruta/a/tu/imagen.jpg' con la ruta de tu imagen */
+      background-size: cover; /* Ajusta la imagen para cubrir la página */
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 20px;
+      position: relative;    
+      /* Agrega el modo de mezcla para combinar la imagen de fondo con el contenido */
+      background-blend-mode: lighten;
+}
+  /* Estilo para el área de contenido principal */
+main {
+      padding: 20px;
+      flex-direction: column;
+}
+  
+h1{
+    color: var(--verde);
+    opacity: 1.0;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+    border-radius: 8;
+}
+
+h3 {
+    color: var(--verde);
+    opacity: 1.0;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 8;
+}
+/* Estilos para la ceniza */
+#ash-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden; /* Para ocultar las partículas que caen fuera del contenedor */
+}
+
+.ash {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #D3D4D9;
+    opacity: 0.5;
+    animation: fall ease-out infinite;
+    transform-origin: 50% 0; /* Hacer que las partículas roten al caer */
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg); /* Iniciar desde arriba de la pantalla sin rotación */
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg); /* Caer hasta abajo con rotación completa */
+    }
+}
+
+.logo {
+    width: 50px; /* Ajusta el ancho según el tamaño de tu logo */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+    margin-right: auto; /* Ajusta el margen derecho según sea necesario */
+    margin-left: auto;
+    border-radius: 50px;
+    opacity: 0.9;
+}
+
+p {
+    color: #d8e0da;
+    font-size: 23px;
+    text-shadow: 2px 2px black;
+}
+
+@media (max-width: 768px) {
+  /* Estilos para pantallas de hasta 768px de ancho */
+  .hechos {
+    width: 80%; /* Aumenta el ancho de la caja de hechos */
+  }
+
+  .hechos li {
+    flex-direction: column; /* Coloca el nombre y las acciones en columnas */
+    align-items: center; /* Centra los elementos */
+  }
+
+  .acciones {
+    width: 40%; /* Reduce el ancho de las acciones */
+  }
+}
+
+li {
+    color: var(--verde);
+}
+
+.buscar {
+  margin: 20px;
+  display: flex; /* Display de tipo flex para alinear los elementos */
+  flex-direction: column; /* Dirección de flex en columna */
+  align-items: center; /* Alineación de elementos centrada */
+}
+
+.buscar-interno {
+  display: flex; /* Display de tipo flex para alinear los elementos */
+  flex-direction: row; /* Dirección de flex en fila */
+  background-color: #f0f0f0; /* Color de fondo para la barra de búsqueda */
+  border-radius: 5px; /* Bordes redondeados */
+  overflow: hidden; /* Ocultar el desbordamiento de los elementos hijos */
+}
+
+.buscar-bar {
+  display: inline-block;
+  padding: 5px;
+  flex: 1; /* Ocupa todo el espacio disponible */
+  border: none; /* Elimina el borde predeterminado del input */
+  outline: none; /* Elimina el contorno al enfocar el input */
+}
+
+.buscar h1 {
+  text-align: center; /* Alineación de texto centrada */
+  color: #09bd30; /* Color del texto */
+}
+
+.buscar-interno button[type="submit"] {
+  margin: 3px;
+  flex: 0; /* No ocupa más espacio del necesario */
+  padding: 8px 15px; /* Añade relleno al botón */
+  background-color: #3498db; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  border: none; /* Elimina el borde del botón */
+  border-radius: 3px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+.buscar-interno button[type="submit"]:hover {
+  background-color: #2980b9; /* Cambia el color de fondo al pasar el ratón */
+}
+

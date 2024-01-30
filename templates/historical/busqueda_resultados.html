@@ -1,0 +1,69 @@
+{% extends "layout/base.html" %}
+{% load static %}
+
+
+{% block tittle %}
+  Hechos Historicos
+{% endblock tittle %}
+
+{% block style %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+{% endblock style %}
+
+
+
+{% block cuerpo %}
+<body class="container">
+  {% include "layout/partials/menu.html" %}
+
+  <div id="ash-container"></div>
+
+  <main class="row">
+    
+    <div class="hechos">
+      <h1>Busqueda</h1>
+    
+        {% for hecho in hechos  %}
+            <li>
+                <div class="hecho-nombre">{{ hecho.nombre }}</div>
+                <div class="acciones">
+                    <span class="detalles">
+                        <a href="{% url "hechodetail" hecho.id %}">
+                            Detalles
+                        </a>
+                    </span>
+                    <span class="senalar">
+                        <a href="">
+                            Señalar
+                        </a>
+                    </span>
+                </div>
+            </li>
+        {% endfor %}
+
+        {% for figura in figuras  %}
+            <li>
+                <div class="hecho-nombre">{{ figura }}</div>
+                <div class="acciones">
+                    <span class="detalles">
+                        <a href="{% url "detalles" figura.id %}">
+                            Detalles
+                        </a>
+                    </span>
+                    <span class="senalar">
+                        <a href="">
+                            Señalar
+                        </a>
+                    </span>
+                </div>
+            </li>
+        {% endfor %}
+    </div>
+       
+  </main>
+
+  <footer>
+    <p>Todos los derechos reservados</p>
+  </footer>
+</body>
+{% endblock cuerpo %}

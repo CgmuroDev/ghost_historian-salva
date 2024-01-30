@@ -1,0 +1,42 @@
+{% extends "layout/base.html" %}
+{% load static %}
+
+
+{% block tittle %}
+  Personajes
+{% endblock tittle %}
+
+{% block style %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+{% endblock style %}
+
+
+
+{% block cuerpo %}
+<body class="container">
+  {% include "layout/partials/menu.html" %}
+
+  <div id="ash-container"></div>
+
+  <main class="row">
+    
+    <div class="hechos">
+        <h1>Detalle de personaje</h1>
+            <ul>
+                <li><p>Nombre: {{ personaje.nombre }}</p></li>
+                <li><p>Apellido: {{ personaje.apellido }}</p></li>
+                <li><p>País de origen: {{ personaje.pais_de_origen }}</p></li>
+                <li><p>Fecha de nacimiento: {{ personaje.fecha_de_nacimiento }}</p></li>
+                <li><p>Fecha de muerte: {{ personaje.fecha_de_muerte }}</p></li>
+                <li><p>Biografía: {{ personaje.biografia }}</p></li>
+
+            </ul>
+    </div>
+       
+  </main>
+
+  <footer>
+    <p>Todos los derechos reservados</p>
+  </footer>
+</body>
+{% endblock cuerpo %}

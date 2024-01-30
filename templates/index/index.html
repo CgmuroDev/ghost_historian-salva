@@ -1,0 +1,57 @@
+{% extends "layout/base.html" %}
+{% load static %}
+
+
+{% block tittle %}
+  Home
+{% endblock tittle %}
+
+{% block style %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+{% endblock style %}
+
+
+
+{% block cuerpo %}
+<body class="container">
+  {% include "layout/partials/menu.html" %}
+  
+  <div id="ash-container"></div>
+
+  <main class="row">
+    <div class="content1">
+      <h3 class="subtitulo">La Segunda Guerra Mundial:</h3>
+      <p class="parrafo">
+        Un Conflicto que Cambió el Rumbo de la Historia
+
+        La Segunda Guerra Mundial, desencadenada en 1939 y extendida hasta 1945, se erige como uno de los capítulos más oscuros y determinantes del siglo XX. Este conflicto global involucró a naciones de todos los continentes, dando lugar a una serie de eventos que transformaron radicalmente el curso de la historia moderna.
+      </p>
+    </div>
+
+    <div class="content2">
+        <h3 class="subtitulo">Su origen:</h3>
+        <p class="parrafo">
+            Se remonta al final de la primera guerra mundial, cuando el Tratado de Versalles impuso duras condiciones a Alemania, que se vio humillada y empobrecida. El ascenso de Adolf Hitler al poder en 1933, con su ideología nacionalsocialista y su ambición expansionista, provocó el inicio de una serie de agresiones e invasiones a otros países, como Austria, Checoslovaquia y Polonia. Esta última fue el detonante de la declaración de guerra de Francia y el Reino Unido a Alemania el 3 de septiembre de 1939.
+        </p>
+      </div>
+
+      <div class="content3">
+        <h3 class="subtitulo">Desarrollo:</h3>
+        <p class="parrafo">
+            La guerra se desarrolló en varios frentes y escenarios, desde Europa hasta Asia y desde África hasta el Pacífico. Algunas de las batallas más importantes fueron la de Stalingrado, la de El Alamein, la de Normandía, la de Midway y la de Iwo Jima. La guerra también implicó el uso de nuevas armas y tecnologías, como los tanques, los aviones, los submarinos, los radares y las bombas atómicas. Estas últimas fueron lanzadas por Estados Unidos sobre las ciudades japonesas de Hiroshima y Nagasaki en agosto de 1945, causando la rendición incondicional de Japón y el fin de la guerra.
+        </p>
+      </div>
+
+      <div class="content4">
+        <h3 class="subtitulo">Que pasó despues?</h3>
+        <p class="parrafo">
+            La segunda guerra mundial tuvo profundas consecuencias para el mundo, tanto políticas como económicas, sociales y culturales. Entre ellas se pueden mencionar el surgimiento de las Naciones Unidas, el inicio de la Guerra Fría, la división de Alemania, la descolonización de Asia y África, el nacimiento del Estado de Israel, el avance de los derechos humanos y el desarrollo de la ciencia y la cultura. La segunda guerra mundial marcó un antes y un después en la historia de la humanidad.
+        </p>
+      </div>
+  </main>
+
+  <footer>
+    <p>Todos los derechos reservados</p>
+  </footer>
+</body>
+{% endblock cuerpo %}

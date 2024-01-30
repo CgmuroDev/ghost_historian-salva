@@ -1,0 +1,79 @@
+{% load static %}
+<nav>
+  <ul>
+    <li><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+    {% if user.is_authenticated %}
+    <div class="dropdown">
+      <button class="dropbtn">Historia</button>
+      <div class="dropdown-content">
+        <li><a href="{% url 'verhecho' %}" class="nav-link">Hechos Historicos</a></li>
+        <li><a href="{% url 'figuras' %}" class="nav-link">Figuras</a></li>
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="dropdown">
+      <button class="dropbtn">Cuenta</button>
+      <div class="dropdown-content">
+
+        {% if user.is_authenticated %}
+        <a href="{% url 'ver' user.id %}">Ver</a>
+        <a href="{% url 'editar' user.id %}">Editar</a>
+        <a id="eliminar-link" class="eliminar" href="{% url 'eliminar' user.id %}">Borrar</a>
+        <a href="{% url 'salir' %}">Salir</a>
+        {% else %}
+        <a href="{% url 'login' %}">Ingresar</a>
+        <a href="{% url 'crearcuenta' %}">Crear</a>
+        {% endif %}
+
+      </div>
+
+    </div>
+    {% if user.is_authenticated %}
+    <h3>Hola, {{user.username|capfirst}}</h3>
+    {% endif %}
+    {% if user.is_authenticated %}
+    <form method='GET' action='{% url "buscar" %}'>
+      <div class="buscar">
+        <div class="buscar-interno">
+          <input type="text" name="buscar" placeholder="Buscar..." class="buscar-bar">
+          <button type="submit" value="buscar">Buscar</button>
+        </div>
+      </div>
+    </form>
+
+    {% else %}
+    <h3>Ingrese su cuenta para acceder a las funciones</h3>
+    {% endif %}
+
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <li class="message-item {% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const messageItems = document.querySelectorAll('.message-item');
+        messageItems.forEach(item => {
+          item.style.display = 'block';
+        });
+  
+        const eliminarLink = document.getElementById('eliminar-link');
+    
+        eliminarLink.addEventListener('click', confirmarBorrar);
+  
+        function confirmarBorrar(event) {
+          var confirmacion = confirm('¿Seguro que quieres borrar la cuenta?');
+          if (!confirmacion) {
+            event.preventDefault(); 
+          }
+        }
+      });
+    </script>
+    {% endif %}
+
+    </form>
+    <li><a class="nav-link active about-link" href="{% url 'about' %}">Sobre nosotros</a></li>
+  </ul>
+</nav>

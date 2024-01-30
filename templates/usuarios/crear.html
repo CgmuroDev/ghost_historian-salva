@@ -1,0 +1,50 @@
+{% extends "layout/base.html" %}
+{% load static %}
+
+{% block tittle %}
+  Hechos Historicos
+{% endblock tittle %}
+
+{% block style %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+{% endblock style %}
+
+
+
+{% block cuerpo %}
+<body class="container">
+  {% include "layout/partials/menu.html" %}
+
+  <div id="ash-container"></div>
+
+  <main class="row">
+    
+    <div class="registro">
+      <h1>Crear cuenta</h1>
+      <form action="{% url 'crearcuenta' %}" method="POST">
+        {% csrf_token %}
+        <h3>Username</h3>
+        {{form.username}}
+        <h3>Nombre</h3>
+        {{form.nombre}}
+        <h3>Apellidos</h3>
+        {{form.apellidos}}
+        <h3>Contraseña</h3>
+        {{form.password1}}
+        <h3>Repita la Contraseña</h3>
+        {{form.password2}}
+        <h3>Email</h3>
+        {{form.email}}
+        <button type="submit">Crear Usuario</button>
+      </form>
+    
+
+    </div>
+       
+  </main>
+
+  <footer>
+    <p>Todos los derechos reservados</p>
+  </footer>
+</body>
+{% endblock cuerpo %}

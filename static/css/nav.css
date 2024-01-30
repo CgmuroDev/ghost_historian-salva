@@ -1,0 +1,202 @@
+/* Estilos generales de la barra de navegación */
+nav {
+    background-color: #252627;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 10px; /* Agregar bordes curvados */
+    opacity: 1;
+    
+}
+
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    opacity: 1.0;
+}
+
+/* Estilos específicos del enlace de navegación */
+nav a {
+    text-decoration: none;
+    color: #D3D4D9;
+    padding: 15px 20px;
+    display: inline-block;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    opacity: 1.0;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* Estilo cuando se pasa el ratón sobre el enlace de navegación */
+nav a:hover,
+nav a.selected {
+    color: #EFF7FF;
+    background-color: #088b5f;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* Estilos para el botón del desplegable */
+.dropbtn {
+    background-color: #252627;
+    color: #D3D4D9;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* Estilos para el contenedor del desplegable */
+.dropdown {
+    display: inline-block;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* Estilos para el contenido del desplegable */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #252627;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* Estilos específicos del enlace del desplegable */
+.dropdown-content a {
+    color: #D3D4D9;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* Estilo cuando se pasa el ratón sobre el enlace del desplegable */
+.dropdown-content a:hover,
+.dropdown-content a.selected {
+    color: #D3D4D9;
+    background-color: #088b5f;
+}
+
+/* Mostrar el desplegable al pasar el ratón sobre el botón */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Alinear a la derecha el elemento "Sobre nosotros" */
+nav li:last-child {
+    margin-left: auto;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #D3D4D9;
+    padding: 5px;
+    text-align: center;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    opacity: 0.8;
+}
+
+footer p{
+    color: #d8e0da;
+    font-size: 15px;
+    text-shadow: 2px 2px black;
+}
+
+.nav-link {
+    transition: color 0.3s ease; /* Agrega transición al color del texto */
+}
+  
+.nav-link:hover {
+    color: #ffcc00; /* Cambia el color al pasar el ratón */
+}
+
+.buscar {
+  margin: 10px;
+  display: flex; /* Display de tipo flex para alinear los elementos */
+  flex-direction: column; /* Dirección de flex en columna */
+  align-items: center; /* Alineación de elementos centrada */
+}
+
+.buscar-interno {
+  display: flex; /* Display de tipo flex para alinear los elementos */
+  flex-direction: row; /* Dirección de flex en fila */
+  background-color: #f0f0f0; /* Color de fondo para la barra de búsqueda */
+  border-radius: 5px; /* Bordes redondeados */
+  overflow: hidden; /* Ocultar el desbordamiento de los elementos hijos */
+}
+
+.buscar-bar {
+  display: inline-block;
+  padding: 5px;
+  flex: 1; /* Ocupa todo el espacio disponible */
+  border: none; /* Elimina el borde predeterminado del input */
+  outline: none; /* Elimina el contorno al enfocar el input */
+  background-color: #d6d6d6;
+}
+
+.buscar h1 {
+  text-align: center; /* Alineación de texto centrada */
+  color: #09bd30; /* Color del texto */
+}
+
+.buscar-interno button[type="submit"] {
+  margin: 3px;
+  flex: 0; /* No ocupa más espacio del necesario */
+  padding: 8px 15px; /* Añade relleno al botón */
+  background-color: #1ba02c; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  border: none; /* Elimina el borde del botón */
+  border-radius: 3px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+.buscar-interno button[type="submit"]:hover {
+  background-color: #2980b9; /* Cambia el color de fondo al pasar el ratón */
+}
+
+
+  .messages {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+  }
+
+  .success {
+    color: green;
+  }
+
+  .info {
+    color: blue;
+  }
+
+  .warning {
+    color: orange;
+  }
+
+  .error {
+    color: red;
+  }
+
+  .message-item {
+    display: none;
+    animation: fadeInOut 2s ease-out;
+  }
+
+  @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0;
+    }
+    10%, 90% {
+      opacity: 1;
+    }
+  }
+

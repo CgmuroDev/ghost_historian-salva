@@ -1,0 +1,50 @@
+{% extends "layout/base.html" %}
+{% load static %}
+
+
+{% block tittle %}
+  Personajes
+{% endblock tittle %}
+
+{% block style %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+{% endblock style %}
+
+
+
+{% block cuerpo %}
+<body class="container">
+  {% include "layout/partials/menu.html" %}
+
+  <div id="ash-container"></div>
+
+  <main class="row">
+    
+    <div class="hechos">
+        <h1>Detalle del Hecho</h1>
+            <ul>
+                <li><p>Nombre: {{ hecho.nombre }}</p></li>
+                <li><p>Fecha: {{ hecho.fecha }}</p></li>
+                <li><p>Resumen: {{ hecho.resumen }}</p></li>
+                {% if hecho.descripcion %}
+                    <li><p>Descripcion: {{ hecho.descripcion }}</p></li>
+                {% endif %}
+                
+                <li><p>Personaje importante: </p>
+                    <ul>
+                        {% for personaje in hecho.personajes.all  %}
+                            <p>{{ personaje.nombre }} {{personaje.apellido}} </p>
+                        {% endfor %}
+                    </ul>
+                </li>
+                
+            </ul>
+    </div>
+       
+  </main>
+
+  <footer>
+    <p>Todos los derechos reservados</p>
+  </footer>
+</body>
+{% endblock cuerpo %}

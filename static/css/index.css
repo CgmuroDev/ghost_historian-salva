@@ -1,0 +1,332 @@
+/* Resetear estilos predeterminados del cuerpo y la lista */
+body, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2d2e30; /* Fondo claro y ligeramente grisáceo */
+    background-image: url('https://th.bing.com/th/id/R.45c630ce7761b404cdf8661f57d96d97?rik=m5QVBmO%2fvS1LsA&pid=ImgRaw&r=0');
+    background-size: cover; /* Ajusta la imagen para cubrir la página */
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    position: relative;    
+    /* Agrega el modo de mezcla para combinar la imagen de fondo con el contenido */
+    background-blend-mode: lighten;
+}
+/* Estilo para el área de contenido principal */
+main {
+    padding: 20px;
+}
+
+h1{
+    color: #0aa06e;
+    opacity: 1.0;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 8;
+}
+
+h3 {
+    color: #0aa06e;
+    opacity: 1.0;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 8;
+}
+/* Estilos para la ceniza */
+#ash-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden; /* Para ocultar las partículas que caen fuera del contenedor */
+}
+
+.ash {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #D3D4D9;
+    opacity: 0.5;
+    animation: fall ease-out infinite;
+    transform-origin: 50% 0; /* Hacer que las partículas roten al caer */
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg); /* Iniciar desde arriba de la pantalla sin rotación */
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg); /* Caer hasta abajo con rotación completa */
+    }
+}
+
+.content1 {
+    background-color: #D3D4D9;
+    padding: 1.5%;
+    opacity: 0.5;
+    border-radius: 5%;
+    width: 40%;
+    position: relative;
+    right: -55%;
+    background-size: cover;
+    
+}
+
+.content2 {
+    background-color: #D3D4D9;
+    padding: 1.5%;
+    opacity: 0.9;
+    border-radius: 5%;
+    width: 40%;
+    position: relative;
+    right: -22px;
+
+    
+}
+
+.content3 {
+    background-color: #D3D4D9;
+    padding: 1.5%;
+    opacity: 0.9;
+    border-radius: 5%;
+    width: 40%;
+    position: relative;
+    right: -55%;
+    
+}
+
+.content4 {
+    background-color: #D3D4D9;    
+    padding: 1.5%;
+    opacity: 0.9;
+    border-radius: 5%;
+    width: 40%;
+    position: relative;
+    right: -1%;
+    
+}
+
+.logo {
+    width: 50px; /* Ajusta el ancho según el tamaño de tu logo */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+    margin-right: auto; /* Ajusta el margen derecho según sea necesario */
+    margin-left: auto;
+    border-radius: 50px;
+    opacity: 0.9;
+}
+
+.content1, .content2, .content3 .content4 {
+    transition: all 1.0s ease-in-out;
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  
+.content1.in, .content2.in, .content3.in .content4.in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+p {
+    color: #030303;
+    font-size: 18px;
+    text-shadow: 1px 0.2px black;
+}
+
+/* Estilos específicos de la sección de hechos históricos */
+.hechos {
+    color: #000000; /* Color del texto */
+}
+
+.hechos h1 {
+    color: #0aa06e; /* Color del encabezado */
+}
+
+.hechos li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D3D4D9; /* Fondo de cada elemento de la lista */
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Estilos para los enlaces Detalles y Señalar */
+/* Estilos para los enlaces Detalles y Señalar */
+.acciones a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Agregamos transiciones */
+}
+
+.acciones .detalles a {
+    background-color: #4caf50; /* Verde para Detalles */
+    color: #fff;
+}
+
+.acciones .senalar a {
+    background-color: #ffcc00; /* Amarillo para Señalar */
+    color: #fff;
+}
+
+/* Estilos de hover */
+.acciones .detalles a:hover {
+    background-color: #1f241f; /* Cambia el color al pasar el ratón */
+}
+
+.acciones .senalar a:hover {
+    background-color: #332e1e; /* Cambia el color al pasar el ratón */
+}
+
+.hechos .acciones .detalles {
+    margin-right: 10px; /* Puedes ajustar el valor según sea necesario */
+}
+
+
+
+.form_alert {
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    margin: 20px auto;
+    
+}
+
+.form_alert h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form_div {
+    margin-bottom: 10px;
+}
+
+.formdiv {
+    list-style: none;
+    padding: 0;
+}
+
+.formdiv label {
+    display: block;
+    font-weight: bold;
+    margin: 8px;
+    color: #D3D4D9;
+    font-size: medium;
+}
+
+.formdiv input[type="text"],
+.formdiv input[type="email"],
+.formdiv textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #D3D4D9;
+    text-size-adjust: 100%;
+    color: #0d0f0f;
+}
+
+.formboton {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.formboton:hover {
+    background-color: #45a049;
+}
+
+/* Estilo general del formulario */
+.registro {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Estilo de los títulos */
+.registro h3 {
+  text-align: center;
+  margin: 0 0 10px 0;
+  color: #e7e3e3;
+  
+}
+.registro h1 {
+    text-align: center;
+    margin: 0 0 10px 0;
+    color: #159235;
+    border: #000000;
+}
+
+/* Estilo de los campos de entrada */
+.registro input {
+  display: block;
+  width: 95%;
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  border: black 2px solid;
+}
+
+/* Estilo del botón de envío */
+.registro button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Estilo del botón de envío al pasar el ratón */
+.registro button:hover {
+  background-color: #079741;
+}
+
+/* Estilos específicos para la página de detalles del usuario */
+.usuario-detalles {
+    text-align: center;
+    color: #ffffff; /* Color del texto principal, cambia a blanco (#ffffff) */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .usuario-detalles h1 {
+    color: #0aa06e; /* Color del encabezado */
+  }
+  
+  .usuario-detalles ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .usuario-campo {
+    margin-bottom: 20px;
+  }
+  
+  .usuario-campo p {
+    font-size: 18px;
+    color: #ffffff; /* Color del texto del campo, cambia a blanco (#ffffff) */
+    margin: 10px 0; /* Agregado para dar un margen superior e inferior igual */
+  }
+
+  

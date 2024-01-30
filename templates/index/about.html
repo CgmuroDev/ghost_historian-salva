@@ -1,0 +1,27 @@
+{% extends "layout/base.html" %}
+{% load static %}
+
+
+{% block tittle %}
+  About
+{% endblock tittle %}
+
+{% block style %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+{% endblock style %}
+
+{% block cuerpo %}
+<body class="container">
+  {% include "layout/partials/menu.html" %}
+
+  <div id="ash-container"></div>
+
+  <main class="row">
+    <h1>About</h1>
+  </main>
+
+  <footer>
+    <p>Todos los derechos reservados</p>
+  </footer>
+</body>
+{% endblock cuerpo %}

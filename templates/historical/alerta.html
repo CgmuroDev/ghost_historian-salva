@@ -1,0 +1,47 @@
+{% extends "layout/base.html" %}
+{% load static %}
+
+
+{% block tittle %}
+  Personajes
+{% endblock tittle %}
+
+{% block style %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+{% endblock style %}
+
+
+
+{% block cuerpo %}
+<body class="container">
+  {% include "layout/partials/menu.html" %}
+
+  <div id="ash-container"></div>
+
+  <main class="row">
+
+    <div class = 'formcontent'>
+    
+        <form  class = 'form_alert' action= {% url "aviso" %} method = 'POST'>
+            <h3>Escriba el problema</h3>
+            {% csrf_token %}
+            <div class = 'form_div'>
+                 <ul class = 'formdiv'>
+                {{form}}
+                <button type="submit" value="enviar" class = 'formboton' >Enviar</button>
+            </ul>
+            </div>
+           
+        </form>
+    
+    </div>
+    
+    
+       
+  </main>
+
+  <footer>
+    <p>Todos los derechos reservados</p>
+  </footer>
+</body>
+{% endblock cuerpo %}
